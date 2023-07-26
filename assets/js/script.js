@@ -1,10 +1,35 @@
 const dayjs = require('dayjs')
+let dailyBlock = $("#timeSlotContainer").children();
+let today = dayjs();
+let currentDate = $("#currentDay")
 //import dayjs from 'dayjs' // ES 2015
-dayjs().format()
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  dailyBlock.on('click', 'button', event => {
+    let clickFunction = $(event.target);
+    localStorage.setItem(clickFunction.parent().attr('id'), clickFunction.siblings('.description').val());
+  });
+
+  dailyBlock.each(function() {
+    itemHour = Number($(this).attr('id').split('-')[1]);
+    presentHour = Number(today.format('HH'));
+
+    if ( presentHour === itemHour ) {
+      $(this).addClass('present')
+    } else if ( presentHour > itemHour ) {
+      $(this).addClass('past');
+    } else if ( presentHour < itemHour ) {
+      $(this).addClass('future');
+    }
+  });
+
+  dailyBlock.each(function() {
+    $(this).children('.description').val(localStorage.getItem($(this).attr('id')));
+  });
+
+  currentDate.text(today.format('dddd, MMMM, D'))
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
