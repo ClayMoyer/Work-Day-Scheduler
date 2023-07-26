@@ -1,6 +1,6 @@
 let dailyBlock = $("#timeSlotContainer").children();
 let today = dayjs();
-let currentDate = $("#currentDay")
+// let currentDate = $("#currentDay")
 
 $(function () {
   //Add a listener for click events on the save button.
@@ -19,25 +19,27 @@ $(function () {
   }
 
   dailyBlock.each(function() {
-    itemHour = Number($(this).attr('id').split('-')[1]);
+    elementHour = Number($(this).attr('id').split('-')[1]);
     presentHour = Number(today.format('H'));
-
+    console.log("elementHour:", elementHour);
+    console.log("presentHour:", presentHour);
 }); 
 // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour.
-    if ( presentHour === itemHour ) {
+    if ( presentHour === elementHour ) {
       $(this).addClass('present')
-    } else if ( presentHour > itemHour ) {
+    } else if ( presentHour > elementHour ) {
       $(this).addClass('past');
-    } else if ( presentHour < itemHour ) {
+    } else if ( presentHour < elementHour ) {
       $(this).addClass('future');
     }
-  });
 
-  dailyBlock.each(function() {
-    $(this).children('.description').val(localStorage.getItem($(this).attr('id')));
+      // // TODO: Add code to display the current date in the header of the page.
+      setInterval(function () {
+        $("#currentDay").text(dayjs().format("dddd, MMMM D"));
+      }, 1000);
   });
 
   // TODO: Add code to display the current date in the header of the page.
-  currentDate.text(today.format('dddd, MMMM, H'))
+  $("#currentDay").text(today.format('dddd, MMMM, D'))
 
