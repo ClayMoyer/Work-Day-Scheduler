@@ -34,12 +34,8 @@ $(function () {
       $(this).addClass('future');
     }
 
-      // // TODO: Add code to display the current date in the header of the page.
-      setInterval(function () {
-        $("#currentDay").text(dayjs().format("dddd, MMMM D"));
-      }, 1000);
+  $("#currentDay").text(today.format('dddd, MMMM D'))
   });
 
-  // TODO: Add code to display the current date in the header of the page.
-  $("#currentDay").text(today.format('dddd, MMMM, D'))
+
 
