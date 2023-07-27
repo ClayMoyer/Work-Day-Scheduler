@@ -1,16 +1,37 @@
-# Work-Day-Scheduler
-A scheduler application
+# <Work-Day-Scheduler>
 
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with time blocks for standard business hours of 9am to 5pm
-WHEN I view the time blocks for that day
-THEN each time block is color-coded to indicate whether it is in the past, present, or future
-WHEN I click into a time block
-THEN I can enter an event
-WHEN I click the save button for that time block
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
+## Description
+
+I created this application to keep track of my busy schedule in a way that I could take pride in because I did it myself.
+## Table of Contents (Optional)
+
+- [](#)
+  - [Description](#description)
+  - [Table of Contents (Optional)](#table-of-contents-optional)
+  - [Installation](#installation)
+  - [Credits](#credits)
+  - [License](#license)
+  - [Features](#features)
+  - [Images](#images)
+
+## Installation
+
+Clone the code via your terminal, open in an IDE, right click on index.html and open with a live server.
+
+
+## Credits
+
+OSU homework week 5 for Third Party APIs recap. Assignment demo/example and starter text to get the text for the application(headings, class id names, etc to stay true to the reqs)
+
+## License
+
+MIT
+
+## Features
+
+An easy to use daily scheduler for the common 9-5 business hours, today's date visible at the top, saving to local storage for data persistence, and color coded time blocks to quickly identify the current hour, past hours, and future hours.
+
+## Images
+
+![Application image 1](./Assets/images/workDayScheduler.png)
+
